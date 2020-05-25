@@ -2,7 +2,7 @@
 MKVPassthru is a simple CLI application to remove/add ads in video files,
 within the subtitles included and in the title of the video.
 
-## Requisitos
+## Prerequisites
 This application uses the mkvmerge and mkvextract commands that are part of the package [MKVToolNix](https://mkvtoolnix.download)
 
 ## Usage
@@ -17,7 +17,8 @@ mkvpassthru *.mkv
 Configuration file path: `~/mkvpassthru.yml` on Unix-based systems or
 `%userprofile%\mkvpassthru.yml` in Windows
 
-## Configuration file example `mkvpassthru.yml`
+## Configuration file example
+`mkvpassthru.yml`
 ```yaml
 ---
 # List of words/phrases to remove in subtitles
