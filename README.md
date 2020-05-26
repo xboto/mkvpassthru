@@ -3,13 +3,13 @@ MKVPassthru is a simple CLI application to remove/add ads in video files,
 within the subtitles included and in the title of the video.
 
 ## Prerequisites
-This application uses the mkvmerge and mkvextract commands that are part of the package [MKVToolNix](https://mkvtoolnix.download)
+This application uses the *mkvmerge* and *mkvextract* commands that are part of the package [MKVToolNix](https://mkvtoolnix.download)
 
 ## Usage
 ```bash
 mkvpassthru name1.mkv name2.mkv ...
 ```
-o (not available in windows)
+or (not available in windows)
 ```bash
 mkvpassthru *.mkv
 ```
@@ -72,4 +72,4 @@ cd ~/github.com/xboto/mkvpassthru
 go build .
 ```
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/xboto/mkvpassthru/blob/master/LICENSE)
