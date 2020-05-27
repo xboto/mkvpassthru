@@ -29,11 +29,9 @@ func Muxing(Filename string, Videos []Track, Audios []Track, Subtitles []Track) 
 	torder := "0:" + strconv.Itoa(Videos[0].ID)
 	var argsdaudio = []string{}
 	for k := range Audios {
-		var defaultstr string
+		defaultstr := "no"
 		if k == 0 {
 			defaultstr = "yes"
-		} else {
-			defaultstr = "no"
 		}
 		argsk := []string{
 			"--language", strconv.Itoa(Audios[k].ID) + ":" + Audios[k].Lang, "--track-name", strconv.Itoa(Audios[k].ID) + ":",
@@ -48,11 +46,9 @@ func Muxing(Filename string, Videos []Track, Audios []Track, Subtitles []Track) 
 	tnums := len(Audios) + 1
 	var argssubtitles = []string{}
 	for k := range Subtitles {
-		var defaultstr string
+		defaultstr := "no"
 		if k == 0 {
 			defaultstr = "yes"
-		} else {
-			defaultstr = "no"
 		}
 		argsk := []string{
 			"--language", "0:" + Subtitles[k].Lang, "--track-name", "0:",
@@ -99,6 +95,15 @@ func Muxing(Filename string, Videos []Track, Audios []Track, Subtitles []Track) 
 	if err != nil {
 		color.Red.Println("Error: Can't rename to: " + Filename)
 		os.Exit(1)
+	}
+
+	if filepath.Ext(Filename) != ".mkv" {
+		err = os.Rename(Filename, Filename[:len(Filename)-4]+".mkv")
+		if err != nil {
+			color.Red.Println("Error: Can't rename to: " + Filename)
+			os.Exit(1)
+		}
+
 	}
 
 	if !CFG.KeepOrgFile {
