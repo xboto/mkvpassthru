@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"xboto/mkvpassthru/models"
+	"github.com/xboto/mkvpassthru/models"
 	"os"
 	"os/exec"
 	"path/filepath"

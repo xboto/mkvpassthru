@@ -2,7 +2,7 @@ package models
 
 import (
 	"io/ioutil"
-	"xboto/mkvpassthru/submerge"
+	"github.com/xboto/mkvpassthru/submerge"
 	"os"
 	"regexp"
 	"strconv"
