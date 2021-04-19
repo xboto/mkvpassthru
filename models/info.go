@@ -35,7 +35,7 @@ func GetFileInfo(Filename string) ([]Track, []Track, []Track, error) {
 	out, err := exec.Command("mkvmerge", "-F", "json", "-i", Filename).Output()
 	if err != nil {
 		color.Red.Println("Error: Can't open the file")
-		os.Exit(1)
+		//os.Exit(1)  <-------
 	}
 	var mkvinfo Info
 	err = json.Unmarshal(out, &mkvinfo)
